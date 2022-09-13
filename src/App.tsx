@@ -1,11 +1,21 @@
-import './App.css'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+
+
+const queryClient = new QueryClient();
 
 function App() {
 
   return (
-    <div className="App">
-      
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   )
 }
 

@@ -11,7 +11,7 @@ const DriverStandings = () => {
     console.log(data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.givenName)
 
     const standings = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.map((data:any)=> { return (
-        <li> {data.position} {data.points} {data.wins} {data.Driver.givenName + " " + data.Driver.familyName	}</li>
+        <li key={data.position}> {data.position} {data.points} {data.wins} {data.Driver.givenName + " " + data.Driver.familyName	}</li>
     )})
 
 

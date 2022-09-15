@@ -3,21 +3,43 @@ import React from 'react'
 import { fetchCurrentDriverStandings } from '../api';
 
 const DriverStandings = () => {
-    const {data, error, isLoading}:any = useQuery(["currentDriverStandings"], fetchCurrentDriverStandings);
+  const { data, error, isLoading }: any = useQuery(["currentDriverStandings"], fetchCurrentDriverStandings);
 
-	if (error) return <div>Request Failed</div>;
-	if (isLoading) return <div>Loading...</div>;
-    
-    console.log(data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.givenName)
+  if (error) return <div>Request Failed</div>;
+  if (isLoading) return <div>Loading...</div>;
 
-    const standings = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.map((data:any)=> { return (
-        <li key={data.position}> {data.position} {data.points} {data.wins} {data.Driver.givenName + " " + data.Driver.familyName	}</li>
-    )})
+  console.log(data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.givenName)
+
+  const season = data.MRData.StandingsTable.season;
+
+  const standings = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.map((data: any) => {
+    return (
+      <tr key={data.position}>
+          <th>{data.position}</th>
+          <th>{data.points}</th>
+          <th>{data.wins}</th>
+          <th>{data.Driver.givenName}</th>
+      </tr>
+    )
+  })
 
 
 
   return (
-    <div>{standings}</div>
+    <div>
+      <h1>{season} Driver Standings</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Postion</th>
+            <th>Points</th>
+            <th>Wins</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        {standings}
+      </table>
+    </div>
   )
 }
 

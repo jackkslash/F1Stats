@@ -10,7 +10,7 @@ const Home = () => {
 
     // console.log(data);
     return (
-        <div>
+        <div className="flex flex-col items-center justify-center space-y-6">
             <CurrentSeason></CurrentSeason>
             <DriverStandings></DriverStandings>
             <ConstructorStandings></ConstructorStandings>

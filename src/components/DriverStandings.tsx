@@ -16,9 +16,17 @@ const DriverStandings = () => {
     return (
       <tr key={data.position}>
           <th>{data.position}</th>
+          <th>{data.Driver.givenName}</th>
+          <th>{data.Driver.code}</th>
           <th>{data.points}</th>
           <th>{data.wins}</th>
-          <th>{data.Driver.givenName}</th>
+          {
+            data.Constructors.map((data:any)=>{
+              return(
+                <th>{data.name}</th>
+              )
+            }) 
+          }
       </tr>
     )
   })
@@ -32,9 +40,11 @@ const DriverStandings = () => {
         <thead>
           <tr>
             <th>Postion</th>
-            <th>Points</th>
-            <th>Wins</th>
             <th>Name</th>
+            <th>Code</th>
+            <th>Points</th>
+            <th>Pole</th>
+            <th>Constructor</th>
           </tr>
         </thead>
         {standings}

@@ -23,12 +23,26 @@ export async function fetchCurrentConstructorStandings() {
 
 }
 
-// export async function test() {
+export async function fetchAllCircuits() {
 
-//     const res = await fetch('https://www.motorsport.com/rss/f1/news/',{
-//         mode: 'cors'});
+    const res = await fetch('http://ergast.com/api/f1/circuits.json?limit=76');
 
-//     return res.json();
+    return res.json();
 
-// }
+}
 
+export async function fetchAllDrivers() {
+
+    const res = await fetch('https://ergast.com/api/f1/drivers.json?limit=855');
+
+    return res.json();
+
+}
+
+export async function fetchAllConstructors() {
+
+    const res = await fetch('http://ergast.com/api/f1/constructors.json?limit=211');
+
+    return res.json();
+
+}

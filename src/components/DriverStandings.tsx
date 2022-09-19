@@ -14,7 +14,7 @@ const DriverStandings = () => {
 
   const standings = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.map((data: any) => {
     return (
-      <tr key={data.position}>
+      <tr key={data.position} className="hover:bg-slate-100">
           <th>{data.position}</th>
           <th>{data.Driver.givenName}</th>
           <th>{data.Driver.code}</th>
@@ -36,8 +36,8 @@ const DriverStandings = () => {
   return (
     <div>
       <h1>{season} Driver Standings</h1>
-      <table>
-        <thead>
+      <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
+        <thead className='table-primary bg-slate-200' >
           <tr>
             <th>Postion</th>
             <th>Name</th>

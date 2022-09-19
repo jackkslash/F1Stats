@@ -15,8 +15,8 @@ const ConstructorStandings = () => {
   const mapOne = data.MRData.StandingsTable.StandingsLists.map((dataOne: any) => {
     return (
       <div><h2>{dataOne.season} Constructor Standings</h2>
-        <table>
-          <thead>
+        <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
+          <thead className='table-primary bg-slate-200'>
             <tr>
               <th>Position</th>
               <th>Constructor</th>
@@ -27,7 +27,7 @@ const ConstructorStandings = () => {
           {
             dataOne.ConstructorStandings.map((dataTwo: any) => {
               return (
-                <tr> 
+                <tr className="hover:bg-slate-100">
                   <th>{dataTwo.position}</th>
                   <th>{dataTwo.Constructor.name}</th>
                   <th>{dataTwo.points}</th>

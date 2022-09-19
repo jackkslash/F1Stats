@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .table-primary {
+      @apply outline outline-1 outline-slate-200;
+    }
+  }

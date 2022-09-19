@@ -26,7 +26,7 @@ const CurrentSeason = () => {
     }
     
     return (
-      <tr key={data.round}>
+      <tr key={data.round} className="hover:bg-slate-100">
         <th>{data.round}</th>
         <th>{data.raceName}</th>
         <th>{data.date} </th>
@@ -45,15 +45,14 @@ const CurrentSeason = () => {
         <CountdownTimer race={finalRaces[0]} ></CountdownTimer>
       </div>
       <div>
-      <h2>{season} Season Calendar</h2>
-      <table>
-        <thead>
+      <h1 className='text-lg font-bold'>{season} Season Calendar</h1>
+      <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
+        <thead className='table-primary bg-slate-200' >
           <tr>
             <th>Round</th>
             <th>Track</th>
             <th>Date</th>
             <th>Time</th>
-            
           </tr>
         </thead>
         {races}

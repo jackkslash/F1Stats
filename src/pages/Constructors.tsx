@@ -7,16 +7,32 @@ const Constructors = () => {
 
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;
-  
+
   console.log(data)
-  const circuits = data.MRData.ConstructorTable.Constructors.map((data:any)=>{
-    return(
-      <li>{data.name}, {data.nationality}, {data.url}</li>
+  const constructors = data.MRData.ConstructorTable.Constructors.map((data: any) => {
+    return (
+      <tr>
+          <th>{data.name}</th>
+          <th>{data.nationality}</th>
+          <th>{data.url}</th>
+      </tr>
+      
     )
   })
-  
+
   return (
-    <div>{circuits}</div>
+    <div className='flex flex-col items-center justify-center pt-6'>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        {constructors}
+      </table>
+    </div>
   )
 }
 

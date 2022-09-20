@@ -1,10 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import ConstructorStandings from "../components/ConstructorStandings";
-import CountdownTimer from "../components/CountdownTimer";
 import CurrentSeason from "../components/CurrentSeason";
 import DriverStandings from "../components/DriverStandings";
-import Navigation from "../components/Navigation";
-// import { test } from "../api";
 
 const Home = () => {
 

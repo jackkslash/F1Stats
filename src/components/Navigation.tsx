@@ -56,7 +56,7 @@ const Navigation = () => {
                                     <i className="text-lg leading-lg text-black opacity-75"></i><span className="ml-2">Drivers</span>
                                 </Link>
                             </li>
-                            {/* <li>
+                            <li>
                                 <Link
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                                     to="/Seasons"
@@ -64,7 +64,7 @@ const Navigation = () => {
                                     <i className="text-lg leading-lg text-black opacity-75"></i><span className="ml-2">Seasons</span>
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                                     to="/Rankings"

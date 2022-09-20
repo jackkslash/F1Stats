@@ -46,3 +46,13 @@ export async function fetchAllConstructors() {
     return res.json();
 
 }
+
+//http://ergast.com/api/f1/seasons.json?limit=73
+
+export async function fetchAllSeasons() {
+
+    const res = await fetch('http://ergast.com/api/f1/seasons.json?limit=73');
+
+    return res.json();
+
+}

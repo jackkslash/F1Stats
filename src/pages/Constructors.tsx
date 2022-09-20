@@ -22,8 +22,8 @@ const Constructors = () => {
 
   return (
     <div className='flex flex-col items-center justify-center pt-6'>
-      <table>
-        <thead>
+      <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
+          <thead className='table-primary bg-slate-200' >
           <tr>
             <th>Name</th>
             <th>Nationality</th>

@@ -30,11 +30,11 @@ const Drivers = () => {
   return (
     <div className='flex flex-col items-center justify-center pt-6'>
       <label htmlFor="search">
-        Search by Task:
+        Search:
         {/* <input id="search" type="text" onChange={handleSearch} /> */}
       </label>
-      <table>
-        <thead>
+      <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
+          <thead className='table-primary bg-slate-200' >
           <tr>
             <th>Name</th>
             <th>Family Name</th>

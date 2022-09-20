@@ -15,8 +15,11 @@ const Home = () => {
         <div>
             <div className="flex flex-col items-center justify-center pt-6">
             <CurrentSeason></CurrentSeason>
-            <DriverStandings></DriverStandings>
-            <ConstructorStandings></ConstructorStandings>
+            <div className="flex flex-row justify-center gap-6 py-6" >
+                <DriverStandings></DriverStandings>
+                <ConstructorStandings></ConstructorStandings>
+            </div>
+           
         </div></div>
 
     )

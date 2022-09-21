@@ -50,9 +50,13 @@ export async function fetchAllConstructors() {
 //http://ergast.com/api/f1/seasons.json?limit=73
 
 export async function fetchAllSeasons() {
+        const res = await fetch('http://ergast.com/api/f1/seasons.json?limit=73');
+        return res.json();
 
-    const res = await fetch('http://ergast.com/api/f1/seasons.json?limit=73');
+}
 
+export async function fetchSeason(year:any) {
+    const res = await fetch('https://ergast.com/api/f1/'+ year +'.json')
     return res.json();
 
 }

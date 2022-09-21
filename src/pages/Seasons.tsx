@@ -1,10 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchAllSeasons } from '../api';
 import { LinkIcon } from '@heroicons/react/24/solid';
+import { useParams } from 'react-router-dom';
 
 const Seasons = () => {
 
-  const { data, error, isLoading }: any = useQuery(["allSeasons"], fetchAllSeasons);
+  const { year }: any = useParams();
+
+  console.log(year);
+
+  const { data, error, isLoading }: any = useQuery(["allSeasons"],fetchAllSeasons);
 
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;
@@ -18,8 +23,6 @@ const Seasons = () => {
       </tr>
     )
   })
-
-  console.log(allSeasons)
 
   return (
     <div className='flex flex-col items-center justify-center pt-6'>

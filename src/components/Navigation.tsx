@@ -25,12 +25,11 @@ const Navigation = () => {
                             
                         </button>
                     </div>
-                    <div
-                        className={
+                    <div className={
                             "lg:flex flex-grow items-center" +
                             (navbarOpen ? " flex" : " hidden")
                         }
-                        id="example-navbar-danger">
+                        id="example-navbar-danger" >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                             <li >
                                 <Link

@@ -6,6 +6,7 @@ import Constructors from './pages/Constructors';
 import Drivers from './pages/Drivers';
 import Home from './pages/Home'
 import Rankings from './pages/Rankings';
+import Season from './pages/Season';
 import Seasons from './pages/Seasons';
 
 
@@ -23,6 +24,7 @@ function App() {
          <Route path="/Drivers" element={<Drivers />}/>
          <Route path="/Constructors" element={<Constructors />}/>
          <Route path="/Seasons" element={<Seasons />}/>
+         <Route path="/Seasons/:year" element={<Season/>}/>
          <Route path="/Rankings" element={<Rankings />}/>
          <Route/>
         </Routes>

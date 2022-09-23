@@ -60,3 +60,12 @@ export async function fetchSeason(year:any) {
     return res.json();
 
 }
+
+export async function fetchDriverConstructors(driver:any) {
+    const res = await fetch('http://ergast.com/api/f1/drivers/'+ driver +'/constructors.json');
+    return res.json();
+}
+export async function fetchDriver(driver:any) {
+    const res = await fetch("http://ergast.com/api/f1/drivers/"+ driver +".json");
+    return res.json();
+}

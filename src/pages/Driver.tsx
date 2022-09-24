@@ -11,7 +11,6 @@ const Driver = () => {
 
   return (
     <div className='flex flex-col items-center justify-center pt-6'>
-      <h1 className='text-lg font-bold'>Driver: </h1>
       <DriverInfo driver={currentDriver}></DriverInfo>
       <DriverConstructors driver={currentDriver}></DriverConstructors>
       </div>

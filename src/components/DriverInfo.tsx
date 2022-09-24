@@ -12,9 +12,20 @@ const DriverInfo = (driver:any) => {
     if (error) return <div>Request Failed</div>;
     if (isLoading) return <div>Loading...</div>;
   
-    console.log(data);
+    const driverInfo = data.MRData.DriverTable.Drivers[0];
+    console.log(data.MRData.DriverTable.Drivers[0].driverId);
+    
     return (
-    <div>DriverInfo</div>
+    <div>
+      <div>{driverInfo.driverId}, 
+      {driverInfo.permanentNumber}, 
+      {driverInfo.code}, 
+      {driverInfo.givenName}, 
+      {driverInfo.familyName}, 
+      {driverInfo.dateOfBirth}, 
+      {driverInfo.nationality}
+      </div>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { fetchDriverConstructors } from '../api';
+import ConstructorStandings from './ConstructorStandings';
 
 const DriverConstructors = (driver:any) => {
     
@@ -13,9 +14,15 @@ const DriverConstructors = (driver:any) => {
     if (error) return <div>Request Failed</div>;
     if (isLoading) return <div>Loading...</div>;
   
-    console.log(data);
+
+    const cons = data.MRData.ConstructorTable.Constructors.map((data:any)=>{
+      return(<div>
+          <li>{data.name}, {data.nationality}</li>
+        </div>
+      )
+    })
     return (
-    <div>DriverConstructors</div>
+    <div>{cons}</div>
   )
 }
 

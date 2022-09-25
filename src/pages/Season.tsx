@@ -20,7 +20,7 @@ const Season = () => {
         <th>{data.round}</th>
         <th>{data.raceName}</th>
         <th>{data.date} </th>
-        <th>{data.time.replace("Z", "")}</th>
+        <th>{data.time?.replace("Z", "")}</th>
       </tr>
     )
   })

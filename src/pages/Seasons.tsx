@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchAllSeasons } from '../api';
 import { LinkIcon } from '@heroicons/react/24/solid';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Seasons = () => {
 
@@ -19,7 +19,7 @@ const Seasons = () => {
     return (
       <tr>
         <th>{data.season}</th>
-        <th className='flex justify-center'><a href={data.url}><LinkIcon width={20} height={20}></LinkIcon></a></th>
+        <th className='flex justify-center'><Link to={"/Seasons/"+data.season}><LinkIcon width={20} height={20}></LinkIcon></Link></th>
       </tr>
     )
   })

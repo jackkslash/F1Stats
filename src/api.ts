@@ -47,8 +47,6 @@ export async function fetchAllConstructors() {
 
 }
 
-//http://ergast.com/api/f1/seasons.json?limit=73
-
 export async function fetchAllSeasons() {
         const res = await fetch('http://ergast.com/api/f1/seasons.json?limit=73');
         return res.json();
@@ -67,5 +65,10 @@ export async function fetchDriverConstructors(driver:any) {
 }
 export async function fetchDriver(driver:any) {
     const res = await fetch("http://ergast.com/api/f1/drivers/"+ driver +".json");
+    return res.json();
+}
+
+export async function fetchConstructorsDrivers(constructor:any) {
+    const res = await fetch("http://ergast.com/api/f1/constructors/"+ constructor +"/drivers.json");
     return res.json();
 }

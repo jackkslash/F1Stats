@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation';
 import Circuits from './pages/Circuits';
+import Constructor from './pages/Constructor';
 import Constructors from './pages/Constructors';
 import Driver from './pages/Driver';
 import Drivers from './pages/Drivers';
@@ -25,6 +26,7 @@ function App() {
          <Route path="/Drivers" element={<Drivers />}/>
          <Route path="/Drivers/:driver" element={<Driver />}/>
          <Route path="/Constructors" element={<Constructors />}/>
+         <Route path="/Constructors/:Constructor" element={<Constructor />}/>
          <Route path="/Seasons" element={<Seasons />}/>
          <Route path="/Seasons/:year" element={<Season/>}/>
          <Route path="/Rankings" element={<Rankings />}/>

@@ -1,5 +1,7 @@
+import { LinkIcon } from '@heroicons/react/24/solid';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { fetchAllConstructors } from '../api';
 
 const Constructors = () => {
@@ -15,6 +17,7 @@ const Constructors = () => {
           <th>{data.name}</th>
           <th>{data.nationality}</th>
           <th>{data.url}</th>
+          <th><Link to={"/Constructors/"+ data.name}><LinkIcon width={20} height={20}></LinkIcon></Link></th>
       </tr>
       
     )
@@ -28,6 +31,7 @@ const Constructors = () => {
             <th>Name</th>
             <th>Nationality</th>
             <th>URL</th>
+            <th>Link</th>
           </tr>
         </thead>
         {constructors}

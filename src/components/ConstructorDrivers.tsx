@@ -1,5 +1,7 @@
+import { LinkIcon } from '@heroicons/react/24/solid';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { fetchConstructorsDrivers } from '../api';
 
 const ConstructorDrivers = (c: any) => {
@@ -13,11 +15,13 @@ const ConstructorDrivers = (c: any) => {
 
     console.log(data)
     const constructorDriver = data.MRData.DriverTable.Drivers.map((data: any) => {
+        const driver = data.familyName;
         return (
             <tr>
                 <th>{data.givenName}</th>
                 <th>{data.familyName}</th>
                 <th>{data.url}</th>
+                <th><Link to={"/Drivers/"+ driver}><LinkIcon width={20} height={20}></LinkIcon></Link></th>
             </tr>
         )
     })

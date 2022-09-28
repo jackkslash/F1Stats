@@ -27,7 +27,7 @@ const Season = () => {
 
   return (
     <div className='flex flex-col items-center justify-center pt-6'>
-      <h1 className='text-lg font-bold'>{season} Season Calendar</h1>
+      <h1 className='text-lg font-bold pb-4'>{season} Season Calendar</h1>
       <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
         <thead className='table-primary bg-slate-200' >
           <tr>

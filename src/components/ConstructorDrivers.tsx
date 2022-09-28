@@ -33,6 +33,7 @@ const ConstructorDrivers = (c: any) => {
                         <th>Name</th>
                         <th>Surename</th>
                         <th>URL</th>
+                        <th>Link</th>
                     </tr>
                 </thead>
                 {constructorDriver}

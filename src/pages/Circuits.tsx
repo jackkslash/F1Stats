@@ -1,4 +1,6 @@
+import { LinkIcon } from '@heroicons/react/24/solid';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 import { fetchAllCircuits } from '../api';
 
 const Circuits = () => {
@@ -10,6 +12,8 @@ const Circuits = () => {
 
   console.log(data)
   const circuits = data.MRData.CircuitTable.Circuits.map((data: any) => {
+    
+    const cir = data.circuitName;
     return (
       <tr>
         <th>{data.circuitName}</th>

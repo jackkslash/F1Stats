@@ -6,8 +6,7 @@ import Constructor from './pages/Constructor';
 import Constructors from './pages/Constructors';
 import Driver from './pages/Driver';
 import Drivers from './pages/Drivers';
-import Home from './pages/Home'
-import Rankings from './pages/Rankings';
+import Home from './pages/Home';
 import Season from './pages/Season';
 import Seasons from './pages/Seasons';
 
@@ -29,7 +28,6 @@ function App() {
          <Route path="/Constructors/:Constructor" element={<Constructor />}/>
          <Route path="/Seasons" element={<Seasons />}/>
          <Route path="/Seasons/:year" element={<Season/>}/>
-         <Route path="/Rankings" element={<Rankings />}/>
          <Route/>
         </Routes>
       </BrowserRouter>

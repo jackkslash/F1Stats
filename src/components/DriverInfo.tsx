@@ -17,14 +17,14 @@ const DriverInfo = (driver:any) => {
     
     return (
     <div>
-      <div>{driverInfo.driverId}, 
-      {driverInfo.permanentNumber}, 
-      {driverInfo.code}, 
-      {driverInfo.givenName}, 
-      {driverInfo.familyName}, 
-      {driverInfo.dateOfBirth}, 
-      {driverInfo.nationality}
-      </div>
+      <h1 className='text-lg pb-2'>Driver Information</h1>
+      <li>{driverInfo.driverId} </li>
+      <li>{driverInfo.permanentNumber}</li>
+      <li>{driverInfo.code}</li>
+      <li> {driverInfo.givenName}</li>
+      <li>{driverInfo.familyName}</li>
+      <li>{driverInfo.dateOfBirth}</li>
+      <li>{driverInfo.nationality}</li>
     </div>
   )
 }

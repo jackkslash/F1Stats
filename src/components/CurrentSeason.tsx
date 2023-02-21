@@ -5,7 +5,9 @@ import CountdownTimer from './CountdownTimer';
 
 const CurrentSeason = () => {
 
-  const { data, error, isLoading }: any = useQuery(["currentSeason"], fetchCurrentSeason);
+  const currentYear = new Date().getFullYear();
+  console.log(currentYear)
+  const { data, error, isLoading }: any = useQuery(["currentSeason", currentYear], () => fetchCurrentSeason(currentYear));
 
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;

@@ -1,6 +1,5 @@
-export async function fetchCurrentSeason() {
-
-    const res = await fetch('https://ergast.com/api/f1/2022.json')
+export async function fetchCurrentSeason(year:any) {
+    const res = await fetch('https://ergast.com/api/f1/'+ year +'.json')
 
     return res.json();
 

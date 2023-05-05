@@ -6,20 +6,20 @@ import { Link, useParams } from 'react-router-dom';
 const Seasons = () => {
 
   const { year }: any = useParams();
-
-  console.log(year);
-
-  const { data, error, isLoading }: any = useQuery(["allSeasons"],fetchAllSeasons);
+  const currentYear = new Date().getFullYear();
+  const { data, error, isLoading }: any = useQuery(["allSeasons"], fetchAllSeasons);
 
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;
 
   console.log(data);
   const allSeasons = data.MRData.SeasonTable.Seasons.map((data: any) => {
+
+    console.log(data.season)
     return (
       <tr>
         <th>{data.season}</th>
-        <th className='flex justify-center'><Link to={"/Seasons/"+data.season}><LinkIcon width={20} height={20}></LinkIcon></Link></th>
+        <th className='flex justify-center'><Link to={"/Seasons/" + data.season}><LinkIcon width={20} height={20}></LinkIcon></Link></th>
       </tr>
     )
   })
@@ -35,6 +35,10 @@ const Seasons = () => {
           </tr>
         </thead>
         {allSeasons}
+        <tr>
+          <th>{currentYear}</th>
+          <th className='flex justify-center'><Link to={"/Seasons/" + currentYear}><LinkIcon width={20} height={20}></LinkIcon></Link></th>
+        </tr>
       </table>
     </div>
 

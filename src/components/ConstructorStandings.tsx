@@ -1,20 +1,22 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react'
 import { fetchCurrentConstructorStandings } from '../api';
-import DriverStandings from './DriverStandings';
+
 
 const ConstructorStandings = () => {
-
-  const { data, error, isLoading }: any = useQuery(["currentConstuctorStandings"], fetchCurrentConstructorStandings);
+  const currentYear = new Date().getFullYear();
+  console.log(currentYear)
+  const { data, error, isLoading }: any = useQuery(["currentConstuctorStandings", currentYear], () => fetchCurrentConstructorStandings(currentYear));
 
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;
 
-  // console.log(data.MRData.StandingsTable)
 
   const mapOne = data.MRData.StandingsTable.StandingsLists.map((dataOne: any) => {
+
+    console.log(dataOne)
     return (
-      <div><h2>{dataOne.season} Constructor Standings</h2>
+      <div>
+        <h1>{dataOne.season} Constructor Standings</h1>
         <table className='table-primary  [&_th]:table-primary [&_th]:p-2 text-sm'>
           <thead className='table-primary bg-slate-200'>
             <tr>
@@ -35,7 +37,9 @@ const ConstructorStandings = () => {
                 </tr>
               )
             })
-          }</table></div>
+          }
+        </table>
+      </div>
 
     )
   })

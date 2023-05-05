@@ -3,7 +3,9 @@ import React from 'react'
 import { fetchCurrentDriverStandings } from '../api';
 
 const DriverStandings = () => {
-  const { data, error, isLoading }: any = useQuery(["currentDriverStandings"], fetchCurrentDriverStandings);
+  const currentYear = new Date().getFullYear();
+  console.log(currentYear)
+  const { data, error, isLoading }: any = useQuery(["currentDriverStandings", currentYear], () => fetchCurrentDriverStandings(currentYear));
 
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div>Loading...</div>;
@@ -15,18 +17,18 @@ const DriverStandings = () => {
   const standings = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.map((data: any) => {
     return (
       <tr key={data.position} className="hover:bg-slate-100">
-          <th>{data.position}</th>
-          <th>{data.Driver.givenName}</th>
-          <th>{data.Driver.code}</th>
-          <th>{data.points}</th>
-          <th>{data.wins}</th>
-          {
-            data.Constructors.map((data:any)=>{
-              return(
-                <th>{data.name}</th>
-              )
-            }) 
-          }
+        <th>{data.position}</th>
+        <th>{data.Driver.givenName}</th>
+        <th>{data.Driver.code}</th>
+        <th>{data.points}</th>
+        <th>{data.wins}</th>
+        {
+          data.Constructors.map((data: any) => {
+            return (
+              <th>{data.name}</th>
+            )
+          })
+        }
       </tr>
     )
   })
